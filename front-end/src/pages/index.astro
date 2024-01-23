@@ -1,29 +1,14 @@
 ---
 import "../styles/globals.css";
+import Layout from "../layouts/Layout.astro";
+import NewContact from "../components/AddContactForm.astro";
+import ContactListFetch from "../components/ContactListFetch.astro";
 
 const API = "http://localhost:8080/contacts";
 
-const contact = await fetch(API);
-const contacts = await contact.json();
-console.log(contacts);
+const response = await fetch(API);
+const data = await response.json();
+// console.log(data);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    {contacts.content[0].id}
-    {contacts.content[0].name}
-    {contacts.content[0].email}
-    {contacts.content[0].title}
-    {contacts.content[0].phone}
-    {contacts.content[0].address}
-    {contacts.content[0].status}
-    <img src={contacts.content[0].photoUrl} />
-  </body>
-</html>
+<Layout><ContactListFetch data={data.content} /></Layout>

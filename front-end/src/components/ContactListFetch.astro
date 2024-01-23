@@ -1,0 +1,20 @@
+---
+import ContactCard from "./ContactCard.astro";
+const props = await Astro.props;
+const data = props.data;
+---
+
+<main class="main">
+  {data?.length === 0 && <div>No Contacts. Please add a new contact</div>}
+
+  <ul class="contact__list">
+    {
+      data?.length > 0 &&
+        data?.map((contact) => (
+          <>
+            <ContactCard contact={contact} key={contact.id} />
+          </>
+        ))
+    }
+  </ul>
+</main>

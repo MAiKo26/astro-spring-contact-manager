@@ -1,0 +1,32 @@
+---
+const props = Astro.props;
+const contact = props.contact;
+console.log(props);
+---
+
+<a href={`/contacts/${contact.id}`} class="contact__item">
+  <div class="contact__header">
+    <div class="contact__image">
+      <img src={contact.photoUrl} alt={contact.name} />
+    </div>
+    <div class="contact__details">
+      <p class="contact_name">{contact.name.substring(0, 15)}</p>
+      <p class="contact_title">{contact.title}</p>
+    </div>
+  </div>
+  <div class="contact__body">
+    <p><i class="bi bi-envelope"></i> {contact.email.substring(0, 20)}</p>
+    <p><i class="bi bi-geo"></i> {contact.address}</p>
+    <p><i class="bi bi-telephone"></i> {contact.phone}</p>
+    <p>
+      {
+        contact.status === "Active" ? (
+          <i class="bi bi-check-circle" />
+        ) : (
+          <i class="bi bi-x-circle" />
+        )
+      }
+      {contact.status}
+    </p>
+  </div>
+</a>

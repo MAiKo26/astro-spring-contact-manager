@@ -1,0 +1,17 @@
+---
+const API = "http://localhost:8080/contacts";
+
+const contact = await fetch(API);
+const contacts = await contact.json();
+---
+
+<div style={{display: "flex", justifyContent: "space-between"}}>
+  <h1>Contact List ({contacts.content.length})</h1>
+  <a
+    href="/new-contact"
+    class="btn"
+    style={{display: "flex", justifyContent: "center", alignItems: "center"}}
+  >
+    <i class="bi bi-plus-square"></i> Add New Contact
+  </a>
+</div>
