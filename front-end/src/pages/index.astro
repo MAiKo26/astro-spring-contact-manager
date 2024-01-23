@@ -8,7 +8,7 @@ const API = "http://localhost:8080/contacts";
 
 const response = await fetch(API);
 const data = await response.json();
-// console.log(data);
+console.log(data.content.map(({id}) => id));
 ---
 
 <Layout><ContactListFetch data={data.content} /></Layout>
