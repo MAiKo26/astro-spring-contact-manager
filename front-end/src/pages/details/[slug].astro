@@ -1,3 +1,18 @@
+---
+import type {GetStaticPaths} from "astro";
+export const getStaticPaths = async () => {
+  const API = "http://localhost:8080/contacts";
+  const response = await fetch(API);
+  const data = await response.json();
+
+  return [
+    {
+      params: {slug: "0"},
+    },
+  ];
+};
+---
+
 <>
   <a href={"/contacts"} class="link"
     ><i class="bi bi-arrow-left"></i> Back to list</a
