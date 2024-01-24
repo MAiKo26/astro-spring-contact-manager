@@ -5,8 +5,12 @@ const contact = await fetch(API);
 const contacts = await contact.json();
 ---
 
-<div class="flex justify-between mt-4 gap-4 flex-wrap items-center flex-row">
-  <h1>Contact List ({contacts.content.length})</h1>
+<div
+  class="flex justify-between w-full mt-4 gap-4 flex-wrap items-center flex-row"
+>
+  <h1 class="text-3xl font-extrabold">
+    Contact List ({contacts.content.length})
+  </h1>
   <a
     href="/new-contact"
     class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-2 px-4 whitespace-normal border-rad rounded shadow-md transition ease-out"
