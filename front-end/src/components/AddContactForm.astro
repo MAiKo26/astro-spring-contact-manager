@@ -1,36 +1,79 @@
 <form>
-  <div class="user-details">
-    <div class="input-box">
-      <span class="details">Name</span>
-      <input type="text" name="name" required />
+  <div class="flex flex-wrap justify-between my-4 mx-0">
+    <div class="mb-4 w-full">
+      <span class="font-semibold">Name</span>
+      <input
+        class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+        type="text"
+        name="name"
+        required
+      />
     </div>
-    <div class="input-box">
-      <span class="details">Email</span>
-      <input type="text" name="email" required />
+    <div class="mb-4 w-full">
+      <span class="font-semibold">Email</span>
+      <input
+        class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+        type="text"
+        name="email"
+        required
+      />
     </div>
-    <div class="input-box">
-      <span class="details">Title</span>
-      <input type="text" name="title" required />
+    <div class="mb-4 w-full">
+      <span class="font-semibold">Title</span>
+      <input
+        class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+        type="text"
+        name="title"
+        required
+      />
     </div>
-    <div class="input-box">
-      <span class="details">Phone Number</span>
-      <input type="text" name="phone" required />
+    <div class="mb-4 w-full">
+      <span class="font-semibold">Phone Number</span>
+      <input
+        class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+        type="text"
+        name="phone"
+        required
+      />
     </div>
-    <div class="input-box">
-      <span class="details">Address</span>
-      <input type="text" name="address" required />
+    <div class="mb-4 w-full">
+      <span class="font-semibold">Address</span>
+      <input
+        class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+        type="text"
+        name="address"
+        required
+      />
     </div>
-    <div class="input-box">
-      <span class="details">Account Status</span>
-      <input type="text" name="status" required />
+    <div class="mb-4 w-full">
+      <span class="font-semibold">Account Status</span>
+      <input
+        class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+        type="text"
+        name="status"
+        required
+      />
     </div>
-    <div class="file-input">
-      <span class="details">Profile Photo</span>
-      <input type="file" name="photo" required />
+    <div class="flex flex-col">
+      <span class="font-semibold">Profile Photo</span>
+      <input
+        class="file:text-white file:bg-blue-800 file:text-sm file:px-2 file:py-4 file:whitespace-normal file:rounded-lg file:border-none file:shadow file:transition file:ease-out file:hover:bg-blue-600"
+        type="file"
+        name="photo"
+        required
+      />
     </div>
   </div>
-  <div class="form_footer">
-    <button type="button" class="btn btn-danger">Cancel</button>
-    <button type="submit" class="btn">Save</button>
+  <div class="flex justify-between items-center mt-[35px]">
+    <button
+      type="button"
+      class="py-5 px-10 text-white bg-red-800 hover:bg-red-600 text-sm whitespace-normal border-rad rounded shadow-md transition ease-out"
+      >Cancel</button
+    >
+    <button
+      type="submit"
+      class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-5 px-10 whitespace-normal border-rad rounded shadow-md transition ease-out"
+      >Save</button
+    >
   </div>
 </form>

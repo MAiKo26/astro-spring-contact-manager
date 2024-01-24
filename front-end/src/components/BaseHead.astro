@@ -5,13 +5,13 @@ const contact = await fetch(API);
 const contacts = await contact.json();
 ---
 
-<div style={{display: "flex", justifyContent: "space-between"}}>
+<div class="flex justify-between mt-4 gap-4 flex-wrap items-center flex-row">
   <h1>Contact List ({contacts.content.length})</h1>
   <a
     href="/new-contact"
-    class="btn"
+    class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-2 px-4 whitespace-normal border-rad rounded shadow-md transition ease-out"
     style={{display: "flex", justifyContent: "center", alignItems: "center"}}
   >
-    <i class="bi bi-plus-square"></i> Add New Contact
+    <i class="bi bi-plus-square mr-3"></i> Add New Contact
   </a>
 </div>

@@ -4,21 +4,43 @@ const contact = props.contact;
 // console.log(props);
 ---
 
-<a href={`/details/${contact.id}`} class="contact__item">
-  <div class="contact__header">
-    <div class="contact__image">
-      <img src={contact.photoUrl} alt={contact.name} />
+<a
+  href={`/details/${contact.id}`}
+  class="width-full bg-[#ecf1f1] p-3 rounded-sm cursor-pointer min-h-max"
+>
+  <div class="flex flex-row justify-start items-center flex-wrap gap-5">
+    <div class="width-[50px]">
+      <img
+        src={contact.photoUrl}
+        alt={contact.name}
+        class="width-full border-sky-800 aspect-square object-cover object-center rounded-sm"
+      />
     </div>
-    <div class="contact__details">
-      <p class="contact_name">{contact.name.substring(0, 15)}</p>
-      <p class="contact_title">{contact.title}</p>
+    <div class="flex flex-col justify-center items-center w-full">
+      <p class="text-[#3c3f3f] text-lg text-center font-bold">
+        {contact.name.substring(0, 15)}
+      </p>
+      <p
+        class="text-sm bg-[#dfe7e8] text-slate-500 text-center rounded-lg font-bold p-4"
+      >
+        {contact.title}
+      </p>
     </div>
   </div>
-  <div class="contact__body">
-    <p><i class="bi bi-envelope"></i> {contact.email.substring(0, 20)}</p>
-    <p><i class="bi bi-geo"></i> {contact.address}</p>
-    <p><i class="bi bi-telephone"></i> {contact.phone}</p>
-    <p>
+  <div class="mt-4 flex gap-2 flex-col">
+    <p class="text-sm mb-1 ml-2 font-bold">
+      <i class="bi bi-envelope"></i>
+      {contact.email.substring(0, 20)}
+    </p>
+    <p class="text-sm mb-1 ml-2 font-bold">
+      <i class="bi bi-geo"></i>
+      {contact.address}
+    </p>
+    <p class="text-sm mb-1 ml-2 font-bold">
+      <i class="bi bi-telephone"></i>
+      {contact.phone}
+    </p>
+    <p class="text-sm mb-1 ml-2 font-bold">
       {
         contact.status === "Active" ? (
           <i class="bi bi-check-circle" />

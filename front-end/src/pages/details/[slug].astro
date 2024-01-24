@@ -17,52 +17,101 @@ const contact = await response.json();
 ---
 
 <Layout>
-  <a href="/" class="btn">&lt;= Go back</a>
+  <a
+    href="/"
+    class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-2 px-4 whitespace-normal border-rad rounded shadow-md transition ease-out"
+    ><i class="bi bi-backspace"></i> Go back</a
+  >
 
-  <div class="profile">
-    <div class="profile__details">
-      <img src={contact.photoUrl} alt={`Profile photo of ${contact.name}`} />
-      <div class="profile__metadata">
-        <p class="profile__name">{contact.name}</p>
-        <p class="profile__muted">JPG, GIF, or PNG. Max size of 10MG</p>
-        <button class="btn"
+  <div class="grid grid-cols-3 items-start gap-4 mt-8">
+    <div
+      class="flex flex-row justify-start items-center flex-wrap gap-4 bg-[#ecf1f1] p-3 rounded-md"
+    >
+      <img
+        class="w-[120px] focus:border-[#b9b7ba] rounded-md border-sky-800 border-4 aspect-square object-cover object-center"
+        src={contact.photoUrl}
+        alt={`Profile photo of ${contact.name}`}
+      />
+      <div class="sm:text-center">
+        <p class="sm:self-center text-[#3c3f3f] text-base font-bold mb-1">
+          {contact.name}
+        </p>
+        <p
+          class="sm:w-full sm:self-center sm:justify-center text-sm text-[#75777a] mb-4"
+        >
+          JPG, GIF, or PNG. Max size of 10MG
+        </p>
+        <button
+          class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-2 px-4 whitespace-normal border-rad rounded shadow-md transition ease-out"
           ><i class="bi bi-cloud-upload"></i> Change Photo</button
         >
       </div>
     </div>
-    <div class="profile__settings">
+    <div class="bg-[#ecf1f1] p-3 rounded-md">
       <div>
         <form class="form">
-          <div class="user-details">
-            <input type="hidden" value={contact.id} name="id" required />
-            <div class="input-box">
+          <div class="flex flex-wrap justify-between my-4 mx-0">
+            <input
+              class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+              type="hidden"
+              value={contact.id}
+              name="id"
+              required
+            />
+            <div class="mb-4 w-full">
               <span class="details">Name</span>
-              <input type="text" value={contact.name} name="name" required />
+              <input
+                class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+                type="text"
+                value={contact.name}
+                name="name"
+                required
+              />
             </div>
-            <div class="input-box">
+            <div class="mb-4 w-full">
               <span class="details">Email</span>
-              <input type="text" value={contact.email} name="email" required />
+              <input
+                class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+                type="text"
+                value={contact.email}
+                name="email"
+                required
+              />
             </div>
-            <div class="input-box">
+            <div class="mb-4 w-full">
               <span class="details">Phone</span>
-              <input type="text" value={contact.phone} name="phone" required />
+              <input
+                class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+                type="text"
+                value={contact.phone}
+                name="phone"
+                required
+              />
             </div>
-            <div class="input-box">
+            <div class="mb-4 w-full">
               <span class="details">Address</span>
               <input
+                class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
                 type="text"
                 value={contact.address}
                 name="address"
                 required
               />
             </div>
-            <div class="input-box">
+            <div class="mb-4 w-full">
               <span class="details">Title</span>
-              <input type="text" value={contact.title} name="title" required />
+              <input
+                class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+                type="text"
+                value={contact.title}
+                name="title"
+                required
+              />
             </div>
-            <div class="input-box">
+            <div class="mb-4 w-full">
               <span class="details">Status</span>
               <input
+                class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
                 type="text"
                 value={contact.status}
                 name="status"
@@ -71,7 +120,11 @@ const contact = await response.json();
             </div>
           </div>
           <div class="form_footer">
-            <button type="submit" class="btn">Save</button>
+            <button
+              type="submit"
+              class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-2 px-4 whitespace-normal border-rad rounded shadow-md transition ease-out"
+              >Save</button
+            >
           </div>
         </form>
       </div>
@@ -79,6 +132,11 @@ const contact = await response.json();
   </div>
 
   <form style={{display: "none"}}>
-    <input type="file" name="file" accept="image/*" />
+    <input
+      class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
+      type="file"
+      name="file"
+      accept="image/*"
+    />
   </form>
 </Layout>

@@ -4,10 +4,10 @@ const props = await Astro.props;
 const data = props.data;
 ---
 
-<main class="main">
+<main class="mt-6 mx-0">
   {data?.length === 0 && <div>No Contacts. Please add a new contact</div>}
 
-  <ul class="contact__list">
+  <ul class="grid grid-cols-3 gap-4">
     {
       data?.length > 0 &&
         data?.map((contact) => (
