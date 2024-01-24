@@ -41,15 +41,22 @@ const contact = await response.json();
         >
           JPG, GIF, or PNG. Max size of 10MG
         </p>
-        <button
-          class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-2 px-4 whitespace-normal border-rad rounded shadow-md transition ease-out"
-          ><i class="bi bi-cloud-upload"></i> Change Photo</button
-        >
+        <form>
+          <input type="text" name="id" value={slug} hidden />
+          <div class="w-full justify-center flex mb-4">
+            <input class="file:hidden w-28" type="file" name="file" required />
+          </div>
+          <button
+            id="putphoto"
+            class="text-white bg-blue-800 hover:bg-blue-600 text-sm py-2 px-4 whitespace-normal border-rad rounded shadow-md transition ease-out"
+            ><i class="bi bi-cloud-upload"></i> Change Photo</button
+          >
+        </form>
       </div>
     </div>
     <div class="bg-[#ecf1f1] p-3 rounded-md">
       <div>
-        <form class="form">
+        <form class="form" method="POST">
           <div class="flex flex-wrap justify-between my-4 mx-0">
             <input
               class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
@@ -130,13 +137,6 @@ const contact = await response.json();
       </div>
     </div>
   </div>
-
-  <form style={{display: "none"}}>
-    <input
-      class="h-[45px] focus:border-[#b9b7ba] w-full outline-none text-base rounded-sm pl-4 border-2 border-[#e6e1e1] transition ease-in"
-      type="file"
-      name="file"
-      accept="image/*"
-    />
-  </form>
 </Layout>
+
+<script></script>
