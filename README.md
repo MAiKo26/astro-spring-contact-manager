@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the Contact Manager repository! This project is a simple CRUD application with a Spring Boot backend and an Astro Front-End for managing contacts.
+Welcome to the Contact Manager repository! This project is a simple CRUD application with a Spring Boot backend and an Astro Front-End for managing contacts. Followed this [Tutorial](https://www.youtube.com/watch?v=-LUA-LHXobE&t=5908s) to build the Spring Boot Back-End and then added some modifications of mine and the Front-End.
 
 ## Spring Boot Backend
 
