@@ -3,7 +3,6 @@ package com.maiko26.contactmanagerapi.ressource;
 
 import com.maiko26.contactmanagerapi.domain.Contact;
 import com.maiko26.contactmanagerapi.service.ContactService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +20,12 @@ import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 
 @RestController
 @RequestMapping("/contacts")
-@RequiredArgsConstructor
 public class ContactResource {
     private final ContactService contactService;
+
+    public ContactResource(ContactService contactService) {
+        this.contactService = contactService;
+    }
 
     @PostMapping
     public ResponseEntity<Contact> createContact(@RequestBody Contact contact) {
@@ -43,13 +45,12 @@ public class ContactResource {
     }
 
     @PutMapping("/photo")
-    public ResponseEntity<String> uploadPhoto(@RequestParam("id") String id, @RequestParam("file")MultipartFile file) {
+    public ResponseEntity<String> uploadPhoto(@RequestParam("id") String id, @RequestParam("file") MultipartFile file) {
         return ResponseEntity.ok().body(contactService.uploadPhoto(id, file));
     }
 
 
-
-    @GetMapping(path = "/image/{filename}", produces = { IMAGE_PNG_VALUE, IMAGE_JPEG_VALUE })
+    @GetMapping(path = "/image/{filename}", produces = {IMAGE_PNG_VALUE, IMAGE_JPEG_VALUE})
     public byte[] getPhoto(@PathVariable("filename") String filename) throws IOException {
         return Files.readAllBytes(Paths.get(PHOTO_DIRECTORY + filename));
     }
